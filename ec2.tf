@@ -17,7 +17,7 @@ resource "aws_instance" "web1" {
       type = "ssh"
       host = self.public_ip
       user = "ubuntu"
-      private_key = "${file("~/.ssh/youtube-key.pem")}"
+      private_key = file("~/.ssh/youtube-key.pem")
     }  
   }
 }
@@ -40,7 +40,7 @@ resource "aws_instance" "web2" {
       type = "ssh"
       host = self.public_ip
       user = "ubuntu"
-      private_key = "${file("~/.ssh/youtube-key.pem")}"
+      private_key = file("~/.ssh/youtube-key.pem")
     }  
   }
 }
