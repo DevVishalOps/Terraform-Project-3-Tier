@@ -2,7 +2,7 @@
 resource "aws_instance" "web1" {
   ami           = var.ami_web
   instance_type = var.instance_type_web
-  key_name = var.key_name_web
+  key_name = var.key_name_web1
   subnet_id = aws_subnet.public1.id
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
   associate_public_ip_address = true
@@ -17,7 +17,7 @@ resource "aws_instance" "web1" {
       type = "ssh"
       host = self.public_ip
       user = "ubuntu"
-      private_key = "${file("youtube-key.pem")}"
+      private_key = "${file("./youtube-key.pem")}"
     }  
   }
 }
@@ -25,7 +25,7 @@ resource "aws_instance" "web1" {
 resource "aws_instance" "web2" {
   ami           = var.ami_web
   instance_type = var.instance_type_web
-  key_name = var.key_name_web
+  key_name = var.key_name_web2
   subnet_id = aws_subnet.public2.id
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
   associate_public_ip_address = true
@@ -40,7 +40,7 @@ resource "aws_instance" "web2" {
       type = "ssh"
       host = self.public_ip
       user = "ubuntu"
-      private_key = "${file("youtube-key.pem")}"
+      private_key = "${file("./youtube-key.pem")}"
     }  
   }
 }

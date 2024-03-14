@@ -19,7 +19,12 @@ variable "instance_type_db" {
   default = "t2.micro"
 }
 
-variable "key_name_web" {
+variable "key_name_web1" {
+  type = string
+  default = "youtube-key"
+}
+
+variable "key_name_web2" {
   type = string
   default = "youtube-key"
 }
