@@ -66,12 +66,6 @@ variable "az_pvt" {
   default = "ap-south-1b"
 }
 
-
-############## Security Group ######################
-variable "" {
-  
-}
-
 ############ TAG SECTION ###############
 
 variable "vpc_tags" {
