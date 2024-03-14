@@ -9,16 +9,16 @@ resource "aws_instance" "web1" {
 
   tags =var.web1_tags
 
-  provisioner "file" {
-    source = "./youtube-key.pem"
-    destination = "/home/ec2-user/youtube-key.pem"
-  
-    connection {
+  connection {
       type = "ssh"
       host = self.public_ip
       user = "ec2-user"
       private_key = "${file("./youtube-key.pem")}"
     }  
+
+  provisioner "file" {
+    source = "./youtube-key.pem"
+    destination = "/home/ec2-user/youtube-key.pem"
   }
 }
 
@@ -32,16 +32,16 @@ resource "aws_instance" "web2" {
 
   tags =var.web2_tags
 
-  provisioner "file" {
-    source = "./youtube-key.pem"
-    destination = "/home/ec2-user/youtube-key.pem"
-  
-    connection {
+  connection {
       type = "ssh"
       host = self.public_ip
       user = "ec2-user"
       private_key = "${file("./youtube-key.pem")}"
     }  
+
+  provisioner "file" {
+    source = "./youtube-key.pem"
+    destination = "/home/ec2-user/youtube-key.pem"
   }
 }
 
