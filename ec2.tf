@@ -11,13 +11,13 @@ resource "aws_instance" "web1" {
 
   provisioner "file" {
     source = "./youtube-key.pem"
-    destination = "/home/ubuntu/youtube-key.pem"
+    destination = "/home/ubuntu/.ssh/youtube-key.pem"
   
     connection {
       type = "ssh"
       host = self.public_ip
       user = "ubuntu"
-      private_key = "${file("/home/ubuntu/youtube-key.pem")}"
+      private_key = "${file("~/.ssh/youtube-key.pem")}"
     }  
   }
 }
@@ -34,13 +34,13 @@ resource "aws_instance" "web2" {
 
   provisioner "file" {
     source = "./youtube-key.pem"
-    destination = "/home/ubuntu/youtube-key.pem"
+    destination = "/home/ubuntu/.ssh/youtube-key.pem"
   
     connection {
       type = "ssh"
       host = self.public_ip
       user = "ubuntu"
-      private_key = "${file("/home/ubuntu/youtube-key.pem")}"
+      private_key = "${file("~/.ssh/youtube-key.pem")}"
     }  
   }
 }
