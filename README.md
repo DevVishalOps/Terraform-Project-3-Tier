@@ -32,3 +32,5 @@ aws_3tier_architecture_terraform
 * Apache Webserver
 
 * MySQL DB
+
+![Screenshot 2022-06-28 at 7 57 51 AM](https://user-images.githubusercontent.com/58227542/176078468-3847bab0-e70e-4360-b077-181315ee007c.png)
